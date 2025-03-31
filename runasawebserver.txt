@@ -1,2 +1,0 @@
-#to run as a web server we need to use this netcat command
-nc -l -p 8080 -e ./simple_service.sh
