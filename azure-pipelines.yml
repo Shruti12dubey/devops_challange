@@ -1,5 +1,6 @@
 # Docker
 
+  
 
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
@@ -30,7 +31,8 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-    - task: PublishPipelineArtifact@1
+    - task: PublishBuildArtifacts@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)'
-        publishLocation: 'pipeline'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/Shruti-new'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
