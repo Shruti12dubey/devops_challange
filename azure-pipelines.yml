@@ -1,5 +1,6 @@
 # Docker
 
+
   
 
 # Build a Docker image
@@ -31,6 +32,12 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(agent.builddirectory)'
+        Contents: 'D*'
+        TargetFolder: '$(build.artifactstagingdirectory)' 
+
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)/Shruti-new'
