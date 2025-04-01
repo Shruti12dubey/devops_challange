@@ -43,7 +43,7 @@ stages:
       inputs:
         command: buildAndPush
         repository: https://hub.docker.com/
-        dockerfile: /myagent/_work/1/a/Dockerfile
+        dockerfile: $(agent.builddirectory)/Dockerfile
         containerRegistry: dockerconatiner-hub
         tags: |
           shruti-new
